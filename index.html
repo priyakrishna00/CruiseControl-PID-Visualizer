@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cruise Control PID Simulator</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><span>🚗</span> Cruise Control PID Simulator</h1>
+      <p>Interactive PID simulation with real-time tuning & visualization</p>
+      <button id="toggle-mode">🌞 Light / Dark</button>
+    </header>
+
+    <div class="main-grid">
+      <div class="control-panel">
+        <label>Kp <input type="number" id="kp" value="1" step="0.1" /></label>
+        <label>Ki <input type="number" id="ki" value="0.1" step="0.01" /></label>
+        <label>Kd <input type="number" id="kd" value="0.05" step="0.01" /></label>
+        <label>Target Speed (mph) <input type="number" id="target" value="60" /></label>
+        <button onclick="runSimulation()">▶ Start Simulation</button>
+        <button onclick="resetSimulation()">⟳ Reset</button>
+      </div>
+
+      <div class="speed-indicator">
+        <div class="circle">
+          <h2 id="current-speed">0</h2>
+          <p>mph</p>
+        </div>
+      </div>
+    </div>
+
+    <canvas id="chart"></canvas>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
